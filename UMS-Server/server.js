@@ -9,7 +9,7 @@ const secret = config.key;
 const mysqlConn = config.mysqlConnection;
 
 const server = new Hapi.Server();
-server.connection({ port: 3000, host: 'localhost' });
+server.connection({ port: 3000, host: 'localhost', routes: {cors: true } });
 
 server.register(require('hapi-auth-jwt'), (err) => {
 
