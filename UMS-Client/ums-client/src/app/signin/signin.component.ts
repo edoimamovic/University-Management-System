@@ -14,15 +14,22 @@ export class SigninComponent implements OnInit {
 
    username = "";
    password = "";
+   loginValidacija = "";
 
   public signIn() {
+    if (!this.username || !this.password){
+      return;
+    }
     var that = this;
     this.httpClient.post('http://localhost:3000/api/users/authenticate', {username: this.username, password: this.password})
     .subscribe((x : any) => {
       localStorage.setItem('token', x.token);
-
+      localStorage.setItem('user', this.username);
       this.router.navigate(['./main']);
-    });
+    },
+    err => {
+      this.loginValidacija = err.error.message;
+    })
   }
 
   ngOnInit() {

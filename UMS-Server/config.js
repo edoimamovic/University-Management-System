@@ -5,7 +5,7 @@ const mysqlConnection = {
     host     : '127.0.0.1',
     user     : 'root',
     password : '',
-    database : 'ums'
+    database : 'mydb'
 };
 
 module.exports = {

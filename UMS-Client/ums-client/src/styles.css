@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.bg {
+
+    /* Full height */
+    height: 100%; 
+    width: 50%;
+
+    /* Center and scale the image nicely */
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}

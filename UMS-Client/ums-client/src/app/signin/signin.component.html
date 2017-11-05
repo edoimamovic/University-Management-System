@@ -1,5 +1,53 @@
-<p>
-  <input type="text"  [(ngModel)]='this.username'/>
-  <input type="password" [(ngModel)]='this.password'/>
-  <input type="button" (click)='signIn()'/>
-</p>
+<div  class="bg" style="background:url('./assets/bck.jpeg'); float: left; width: 58.32%;">
+</div>
+<div id="overlay">
+  <div style="position: relative; height: 100%;">
+    <h1>University Management System</h1>
+    <h2>Dobrodošli!</h2>  
+    <p>
+      University Management System je informacioni sistem za efikasno administrativno upravljanje radom fakulteta Univerziteta u Sarajevu.
+    </p>
+    <p>
+      Sistem ispunjava potrebe različitih službi fakulteta, uključujući pravnu službu, studentsku i finansijsku službu.
+    </p>
+    <p>
+      Za sve eventualne poteškoće pri radu, pomoć je dostupna na kpodrska@unsa.ba.
+    </p>
+
+    <div class="footer">
+      <p>Univerzitet u Sarajevu, 2017.</p>
+    </div>
+  </div>
+<!-->00A876-->
+</div>
+<div class="row" style="float: right; margin: 0px; width: 41.67%; background-color: #009669; height: 100%;">
+  <div class="col-md-12">  
+    <div style="margin: 50px; margin-top: 30%; ">
+      <h2>Prijava</h2>  
+    
+      <form class="form-horizontal">
+          <div class="form-group">
+              <label for="inputUsername3" class="col-sm-4 control-label">Korisničko ime</label>
+              
+            <div class="col-sm-8">
+                <input type="text" id="inputUsername3" [(ngModel)]='this.username' name="username" class="form-control"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputPassword3" class="col-sm-4 control-label">Password</label>
+            <div class="col-sm-8">
+                <input id="inputPassword3" type="password" [(ngModel)]='this.password' name="password" class="form-control"/>
+            </div>
+          </div>
+          <div style="height: 20px">
+            <p class="error">{{loginValidacija}}</p>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-9 col-sm-2">
+              <input type="button" (click)='signIn()' class="btn btn-default" value="Prijava"/>
+            </div>
+          </div>
+        </form>
+    </div>
+  </div>      
+</div>

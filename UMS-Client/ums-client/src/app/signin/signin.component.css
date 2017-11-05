@@ -1,0 +1,53 @@
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: block; /* Hidden by default */
+    width: 58.333%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.75); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    padding-left: 30px;
+    padding-right: 150px;
+}
+
+h1{
+	font-family: 'Open Sans Condensed', sans-serif;
+    color: #D4D4D4;
+    font-size: 24px;
+}
+
+h2{
+    margin-top: 20%;
+    margin-bottom: 30px;
+	font-family: 'Open Sans Condensed', sans-serif;
+    color: #D4D4D4;
+    font-size: 42px;
+}
+
+p{
+    font-family: 'Raleway', serif;
+    color: #C5C5C5;    
+}
+
+.error{
+    font-family: 'Raleway', serif;
+    color: #E6E6E6;    
+}
+
+label{
+	font-family: 'Roboto', sans-serif;    
+    color: #DADADA;    
+    font-size: 16px;
+}
+
+input[button], .btn, .btn-default{
+    color: #027C58;
+}
+
+.footer{
+    bottom: 30px;
+    position: absolute;
+}
