@@ -15,6 +15,7 @@ export class MainComponent implements OnInit {
  public signOut() {
      localStorage.removeItem('token');
      localStorage.removeItem('user');
+     localStorage.removeItem('role');
      this.router.navigate(['']);
  }
 

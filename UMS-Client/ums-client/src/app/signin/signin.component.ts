@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient } from '@angular/common/http';
-import { Router, CanActivate } from '@angular/router';
+import { Router } from '@angular/router';
+import { JwtHelper } from 'angular2-jwt';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-signin',
@@ -9,24 +11,35 @@ import { Router, CanActivate } from '@angular/router';
 })
 export class SigninComponent implements OnInit {
 
-  constructor(public httpClient : HttpClient, public router : Router) { 
+  constructor(public httpClient : HttpClient, public router : Router, public jwtHelper: JwtHelper, public auth: AuthService) {
    }
 
    username = "";
    password = "";
    loginValidacija = "";
 
+   private loginCallback = (x : any) => {
+    localStorage.setItem('token', x.token);
+    localStorage.setItem('user', this.username);
+    localStorage.setItem('role', x.uloga);
+    let decoded = this.jwtHelper.decodeToken(x.token);
+    let role = decoded.role;
+
+    localStorage.setItem("role", role);
+
+    if (localStorage.getItem('role') === 'profesor'){
+      this.router.navigate(['./prof']);
+    }
+
+  };
+
+
   public signIn() {
     if (!this.username || !this.password){
       return;
     }
-    var that = this;
-    this.httpClient.post('http://localhost:3000/api/users/authenticate', {username: this.username, password: this.password})
-    .subscribe((x : any) => {
-      localStorage.setItem('token', x.token);
-      localStorage.setItem('user', this.username);
-      this.router.navigate(['./main']);
-    },
+
+    this.auth.signIn(this.username, this.password, this.loginCallback,
     err => {
       this.loginValidacija = err.error.message;
     })

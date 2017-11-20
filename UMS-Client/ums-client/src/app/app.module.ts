@@ -12,17 +12,20 @@ import { SigninComponent } from './signin/signin.component';
 
 import { AuthService } from './auth.service';
 import { AuthGuardService } from './auth-guard.service';
+import { ProfComponent } from './prof/prof.component';
 
 const appRoutes: Routes = [
   { path: '', component: SigninComponent },
   { path: 'main', component: MainComponent, canActivate: [AuthGuardService] },
+  { path: 'prof', component: ProfComponent, canActivate: [AuthGuardService] },
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
-    SigninComponent
+    SigninComponent,
+    ProfComponent
   ],
   imports: [
     BrowserModule,
