@@ -12,12 +12,23 @@ import { SigninComponent } from './signin/signin.component';
 
 import { AuthService } from './auth.service';
 import { AuthGuardService } from './auth-guard.service';
+import { ProfAuthGuardService } from './prof-auth-guard.service';
 import { ProfComponent } from './prof/prof.component';
+import { IspitiComponent } from './ispiti/ispiti.component';
+import { IspitiPregledComponent } from './ispiti-pregled/ispiti-pregled.component';
+import { PredmetiComponent } from './predmeti/predmeti.component';
+import { AddUserComponent } from './add-user/add-user.component';
+import { KurseviComponent } from './kursevi/kursevi.component';
 
 const appRoutes: Routes = [
-  { path: '', component: SigninComponent },
+  { path: '', component: SigninComponent, canActivate: [ProfAuthGuardService] },
   { path: 'main', component: MainComponent, canActivate: [AuthGuardService] },
   { path: 'prof', component: ProfComponent, canActivate: [AuthGuardService] },
+  { path: 'ispiti', component: IspitiComponent, canActivate: [AuthGuardService] },
+  { path: 'ispiti-pregled', component: IspitiPregledComponent, canActivate: [AuthGuardService] },
+  { path: 'predmeti', component: PredmetiComponent, canActivate: [AuthGuardService] },
+  { path: 'add-user', component: AddUserComponent, canActivate: [AuthGuardService] },
+  { path: 'kursevi', component: KurseviComponent, canActivate: [AuthGuardService] },
 ];
 
 @NgModule({
@@ -25,7 +36,12 @@ const appRoutes: Routes = [
     AppComponent,
     MainComponent,
     SigninComponent,
-    ProfComponent
+    ProfComponent,
+    IspitiComponent,
+    IspitiPregledComponent,
+    PredmetiComponent,
+    AddUserComponent,
+    KurseviComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +51,11 @@ const appRoutes: Routes = [
   ],
   providers: [AuthService,
     AuthGuardService,
+    ProfAuthGuardService,
     JwtHelper,],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(public auth: AuthService){}
+
+ }

@@ -14,3 +14,7 @@ body, html {
     background-repeat: no-repeat !important;
     background-size: cover !important;
 }
+
+.clickable{
+    cursor: pointer;
+}

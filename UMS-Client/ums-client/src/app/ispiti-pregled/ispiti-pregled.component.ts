@@ -4,11 +4,11 @@ import { AuthService } from '../auth.service';
 import {HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-prof',
-  templateUrl: './prof.component.html',
-  styleUrls: ['./prof.component.css']
+  selector: 'app-ispiti-pregled',
+  templateUrl: './ispiti-pregled.component.html',
+  styleUrls: ['./ispiti-pregled.component.css']
 })
-export class ProfComponent implements OnInit {
+export class IspitiPregledComponent implements OnInit {
 
   constructor( public router : Router, public auth: AuthService, public http: HttpClient) { }
 

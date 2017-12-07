@@ -4,11 +4,11 @@ import { AuthService } from '../auth.service';
 import {HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-prof',
-  templateUrl: './prof.component.html',
-  styleUrls: ['./prof.component.css']
+  selector: 'app-kursevi',
+  templateUrl: './kursevi.component.html',
+  styleUrls: ['./kursevi.component.css']
 })
-export class ProfComponent implements OnInit {
+export class KurseviComponent implements OnInit {
 
   constructor( public router : Router, public auth: AuthService, public http: HttpClient) { }
 
@@ -27,7 +27,7 @@ export class ProfComponent implements OnInit {
   ngOnInit() {
     var that = this;
     let username = localStorage.getItem('user');
-    this.http.get('http://localhost:3000/api/courses?username=' + username)
+    this.http.get('http://localhost:3000/api/courses/')
       .subscribe((res : any) => {that.kursevi = res},
                 (err : any) => {});
   }

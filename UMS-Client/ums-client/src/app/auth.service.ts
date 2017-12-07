@@ -20,6 +20,16 @@ export class AuthService {
     return !!token && !this.jwtHelper.isTokenExpired(token);
   }
 
+  public getRole(): string {
+    const token = localStorage.getItem('token');
+    if (!!token || !this.jwtHelper.isTokenExpired(token)){
+      return localStorage.getItem('role');
+    }
+    else {
+      return undefined;
+    }
+  }
+
   public signIn(username, password, successCallback, errorCallback): void {
     var that = this;
     this.httpClient.post('http://localhost:3000/api/users/authenticate', {username: username, password: password})

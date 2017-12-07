@@ -1,0 +1,43 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+  <h1 class="page-header" style="margin-top: 100px">Kreiranje ispita</h1>
+  <form (ngSubmit)="kreirajIspit()">
+    <div class="form-group">
+      <label for="exampleSelect1">Kurs</label>
+      <select class="form-control" id="exampleSelect1" [(ngModel)]="ispit.kurs" name="exampleSelect1">
+        <option *ngFor="let kurs of kursevi" [value]=kurs.id>{{kurs.naziv}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="exampleSelect1">Termin</label>
+      <div class="row">
+        <div class="col-sm-6">
+          <input type="date" class="form-control" [(ngModel)]="ispit.datum" name="datumispita">
+        </div>
+        <div class="col-sm-6">
+          <input type="time" class="form-control" [(ngModel)]="ispit.vrijeme" name="vrijemeispita">
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleSelect1">Rok za prijavu</label>
+      <div class="row">
+        <div class="col-sm-6">
+          <input type="date" class="form-control" [(ngModel)]="ispit.datumPrijave" name="datumprijave">
+        </div>
+        <div class="col-sm-6">
+          <input type="time" class="form-control" [(ngModel)]="ispit.vrijemePrijave" name="vrijemeprijeve">
+        </div>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="exampleSelect1">Sala</label>
+      <select class="form-control" id="salaSelect1" [(ngModel)]="ispit.sala" name="salaSelect">
+        <option *ngFor="let sala of sale" [value]="sala.id">{{sala.naziv}}</option>
+      </select>
+    </div>
+    <div class="row" style="height: 50px">{{poruka}}</div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

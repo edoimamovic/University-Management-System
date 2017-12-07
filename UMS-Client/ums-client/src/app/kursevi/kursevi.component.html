@@ -1,0 +1,26 @@
+<div class="container-fluid main-content">
+  <div class="row">
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      <h1 class="page-header">Pregled kurseva</h1>
+
+      <div>
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Naziv</th>
+                <th>Predmetni nastavnik</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let kurs of kursevi">
+                <td>{{kurs.naziv}}</td>
+                <td>{{kurs.ime + ' ' + kurs.prezime}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

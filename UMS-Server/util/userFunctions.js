@@ -14,8 +14,8 @@ function verifyUniqueUser(req, res) {
 
 
   let con = mysql.createConnection(connection);
-  let sql = 'SELECT * FROM korisnici WHERE username = ?';
-  let query = con.query(sql, req.payload.username, function(err, result){
+  let sql = 'SELECT * FROM korisnik WHERE username = ?';
+  let query = con.query(sql, [req.payload.username], function(err, result){
     if (result.length > 0){
       res(Boom.badRequest('Username taken'));
       return;

@@ -1,0 +1,41 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+  <h1 class="page-header" style="margin-top: 100px">Dodavanje korisnika</h1>
+  <form (ngSubmit)="kreirajKorisnika()">
+
+    <div class="form-group">
+      <label for="exampleSelect1">Ime</label>
+      <input type="text" class="form-control" [(ngModel)]="user.ime" name="ime">
+    </div>
+  
+    <div class="form-group">
+      <label for="exampleSelect1">Prezime</label>
+      <input type="text" class="form-control" [(ngModel)]="user.prezime" name="prezime">
+    </div>
+  
+    <div class="form-group">
+      <label for="exampleSelect1">Password</label>
+      <input type="password" class="form-control" [(ngModel)]="user.password" name="password">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleSelect1">JMBG</label>
+      <input type="text" class="form-control" [(ngModel)]="user.jmbg" name="jmbg">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleSelect1">Uloga</label>
+      <label class="radio-inline"><input type="radio" name="uloga" [(ngModel)]="user.uloga" name="tip" value="1">Profesor</label>
+      <label class="radio-inline"><input type="radio" name="uloga" [(ngModel)]="user.uloga" name="tip" value="2">Student</label>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleSelect1">Odsjek</label>
+      <select class="form-control" id="odsjekSelect1" [(ngModel)]="user.odsjek" name="odsjekSelect">
+        <option *ngFor="let odsjek of odsjeci" [value]="odsjek.id">{{odsjek.name}}</option>
+      </select>
+    </div>
+
+    <div style="height: 50px">{{poruka}}</div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

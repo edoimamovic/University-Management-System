@@ -1,0 +1,59 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+  <h1 class="page-header" style="margin-top: 100px">Kreiranje kursa</h1>
+  <form (ngSubmit)="kreirajPredmet()">
+
+    <div class="form-group">
+      <label for="exampleSelect1">Naziv</label>
+      <input type="text" class="form-control" [(ngModel)]="predmet.naziv" name="naziv">
+    </div>
+  
+    <div class="form-group">
+      <label for="exampleSelect1">Opis</label>
+      <textarea class="form-control" rows="3" style="overflow:hidden" [(ngModel)]="predmet.opis" name="opis"></textarea>
+    </div>
+  
+    <div class="form-group">
+      <label for="exampleSelect1">Šifra</label>
+      <input type="text" class="form-control" [(ngModel)]="predmet.sifra" name="sifra">
+    </div>
+  
+    <div class="form-group">
+      <label for="exampleSelect1">Predmetni nastavnik</label>
+      <select class="form-control" id="profesorSelect1" [(ngModel)]="predmet.profesor" name="profesorSelect">
+        <option *ngFor="let profesor of profesori" [value]="profesor.id">{{profesor.ime + ' ' + profesor.prezime}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleSelect1">Odsjek</label>
+      <select class="form-control" id="odsjekSelect1" [(ngModel)]="predmet.odsjek" name="odsjekSelect">
+        <option *ngFor="let odsjek of odsjeci" [value]="odsjek.id">{{odsjek.name}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleSelect1">Broj predavanja sedmično</label>
+      <input type="number" class="form-control" [(ngModel)]="predmet.brPredavanja" min="1" max="10" name="brPredavanja">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleSelect1">Broj vježbi sedmično</label>
+      <input type="number" class="form-control" [(ngModel)]="predmet.brVjezbi" min="1" max="10" name="brVjezbi">
+    </div>
+    
+    <div class="form-group">
+      <label for="exampleSelect1">ECTS Bodovi</label>
+      <input type="number" class="form-control" [(ngModel)]="predmet.ects" min="1" max="10" name="ects">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleSelect1">Izborni predmet</label>
+      <input type="checkbox" name="rememberLogin" [(ngModel)] = "predmet.izborni" name="izborni">
+    </div>
+
+    
+
+    <div style="height: 50px">{{poruka}}</div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
