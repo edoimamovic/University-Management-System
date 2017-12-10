@@ -31,7 +31,7 @@ export class SigninComponent implements OnInit {
       this.router.navigate(['./prof']);
     }
     else if (localStorage.getItem('role') === 'studentska'){
-      this.router.navigate(['./predmeti']);
+      this.router.navigate(['./dashboard-ssluzba']);
     }
 
   };

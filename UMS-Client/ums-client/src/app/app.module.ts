@@ -20,6 +20,7 @@ import { PredmetiComponent } from './predmeti/predmeti.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { KurseviComponent } from './kursevi/kursevi.component';
 import { DashboardSsluzbaComponent } from './dashboard-ssluzba/dashboard-ssluzba.component';
+import { DashboardProfComponent } from './dashboard-prof/dashboard-prof.component';
 
 const appRoutes: Routes = [
   { path: '', component: SigninComponent, canActivate: [ProfAuthGuardService] },
@@ -44,7 +45,8 @@ const appRoutes: Routes = [
     PredmetiComponent,
     AddUserComponent,
     KurseviComponent,
-    DashboardSsluzbaComponent
+    DashboardSsluzbaComponent,
+    DashboardProfComponent
   ],
   imports: [
     BrowserModule,

@@ -20,6 +20,9 @@
 </nav>
 <div class="col-sm-3 col-md-2 sidebar" *ngIf ="auth.isAuthenticated()">
   <ul class="nav nav-sidebar" *ngIf ="auth.getRole() == 'profesor'">
+    <li class="active"><a routerLink="/dashboard-prof">Početna</a></li>
+  </ul>
+  <ul class="nav nav-sidebar" *ngIf ="auth.getRole() == 'profesor'">
     <li class="active"><a routerLink="/prof">Pregled predmeta</a></li>
   </ul>
   <ul class="nav nav-sidebar" *ngIf ="auth.getRole() == 'profesor'">
@@ -27,6 +30,9 @@
   </ul>
   <ul class="nav nav-sidebar" *ngIf ="auth.getRole() == 'profesor'">
     <li><a routerLink="/ispiti-pregled">Pregled ispita</a></li>
+  </ul>
+  <ul class="nav nav-sidebar" *ngIf ="auth.getRole() == 'studentska'">
+    <li class="active"><a routerLink="/dashboard-ssluzba">Početna</a></li>
   </ul>
   <ul class="nav nav-sidebar" *ngIf="auth.getRole() == 'studentska'">
     <li><a routerLink="/predmeti">Kreiranje kursa</a></li>
