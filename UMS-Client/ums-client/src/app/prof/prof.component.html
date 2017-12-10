@@ -12,12 +12,18 @@
 
       <div *ngIf="kurs">
         <h2 class="sub-header">{{kurs.naziv}}</h2>
+
+        <select class="form-control" id="vrstaIspitaSelect1" [(ngModel)]="predmet.odsjek" name="odsjekSelect">
+          <option *ngFor="let odsjek of odsjeci" [value]="odsjek.id">{{odsjek.name}}</option>
+        </select>
+
         <div class="table-responsive">
           <table class="table table-striped">
             <thead>
               <tr>
                 <th>Ime</th>
                 <th>Prezime</th>
+                <th>Bodovi</th>
               </tr>
             </thead>
             <tbody>

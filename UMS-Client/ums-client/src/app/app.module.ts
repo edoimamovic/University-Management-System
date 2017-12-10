@@ -19,6 +19,7 @@ import { IspitiPregledComponent } from './ispiti-pregled/ispiti-pregled.componen
 import { PredmetiComponent } from './predmeti/predmeti.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { KurseviComponent } from './kursevi/kursevi.component';
+import { DashboardSsluzbaComponent } from './dashboard-ssluzba/dashboard-ssluzba.component';
 
 const appRoutes: Routes = [
   { path: '', component: SigninComponent, canActivate: [ProfAuthGuardService] },
@@ -29,6 +30,7 @@ const appRoutes: Routes = [
   { path: 'predmeti', component: PredmetiComponent, canActivate: [AuthGuardService] },
   { path: 'add-user', component: AddUserComponent, canActivate: [AuthGuardService] },
   { path: 'kursevi', component: KurseviComponent, canActivate: [AuthGuardService] },
+  { path: 'dashboard-ssluzba', component: DashboardSsluzbaComponent, canActivate: [AuthGuardService] },
 ];
 
 @NgModule({
@@ -41,7 +43,8 @@ const appRoutes: Routes = [
     IspitiPregledComponent,
     PredmetiComponent,
     AddUserComponent,
-    KurseviComponent
+    KurseviComponent,
+    DashboardSsluzbaComponent
   ],
   imports: [
     BrowserModule,

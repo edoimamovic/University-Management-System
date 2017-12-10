@@ -27,7 +27,7 @@ export class KurseviComponent implements OnInit {
   ngOnInit() {
     var that = this;
     let username = localStorage.getItem('user');
-    this.http.get('http://localhost:3000/api/courses/')
+    this.http.get('http://localhost:3000/api/courses')
       .subscribe((res : any) => {that.kursevi = res},
                 (err : any) => {});
   }

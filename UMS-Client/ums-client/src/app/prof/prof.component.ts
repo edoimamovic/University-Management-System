@@ -14,6 +14,7 @@ export class ProfComponent implements OnInit {
 
   kursevi = [];
   studenti = [];
+  vrstaIspita = [];
   kurs = null;
 
   public selectCourse(index : number) : void {
