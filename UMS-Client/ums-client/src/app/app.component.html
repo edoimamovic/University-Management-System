@@ -21,16 +21,17 @@
 <div class="col-sm-3 col-md-2 sidebar" *ngIf ="auth.isAuthenticated()">
   <ul class="nav nav-sidebar" *ngIf ="auth.getRole() == 'profesor'">
     <li class="active"><a routerLink="/dashboard-prof">Početna</a></li>
+    <li><a routerLink="/dashboard-prof">Početna</a></li>
   </ul>
   <ul class="nav nav-sidebar" *ngIf ="auth.getRole() == 'profesor'">
-    <li class="active"><a routerLink="/prof">Pregled predmeta</a></li>
+    <li><a routerLink="/prof">Pregled predmeta</a></li>
   </ul>
   <ul class="nav nav-sidebar" *ngIf ="auth.getRole() == 'profesor'">
     <li><a routerLink="/ispiti">Kreiraj ispit</a></li>
   </ul>
-  <ul class="nav nav-sidebar" *ngIf ="auth.getRole() == 'profesor'">
+  <!--<ul class="nav nav-sidebar" *ngIf ="auth.getRole() == 'profesor'">
     <li><a routerLink="/ispiti-pregled">Pregled ispita</a></li>
-  </ul>
+  </ul>-->
   <ul class="nav nav-sidebar" *ngIf ="auth.getRole() == 'studentska'">
     <li class="active"><a routerLink="/dashboard-ssluzba">Početna</a></li>
   </ul>
@@ -42,6 +43,9 @@
   </ul>
   <ul class="nav nav-sidebar" *ngIf="auth.getRole() == 'studentska'">
     <li><a routerLink="/add-user">Dodaj korisnika</a></li>
+  </ul>
+  <ul class="nav nav-sidebar" *ngIf="auth.getRole() == 'student'">
+    <li><a routerLink="/dashboard-stud">Početna</a></li>
   </ul>
 </div>
 

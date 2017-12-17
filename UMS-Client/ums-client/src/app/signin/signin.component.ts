@@ -28,10 +28,13 @@ export class SigninComponent implements OnInit {
     localStorage.setItem("role", role);
 
     if (localStorage.getItem('role') === 'profesor'){
-      this.router.navigate(['./prof']);
+      this.router.navigate(['./dashboard-prof']);
     }
     else if (localStorage.getItem('role') === 'studentska'){
       this.router.navigate(['./dashboard-ssluzba']);
+    }
+    else if (localStorage.getItem('role') === 'student'){
+      this.router.navigate(['./dashboard-stud']);
     }
 
   };

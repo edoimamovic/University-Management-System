@@ -21,6 +21,7 @@ import { AddUserComponent } from './add-user/add-user.component';
 import { KurseviComponent } from './kursevi/kursevi.component';
 import { DashboardSsluzbaComponent } from './dashboard-ssluzba/dashboard-ssluzba.component';
 import { DashboardProfComponent } from './dashboard-prof/dashboard-prof.component';
+import { DashboardStudComponent } from './dashboard-stud/dashboard-stud.component';
 
 const appRoutes: Routes = [
   { path: '', component: SigninComponent, canActivate: [ProfAuthGuardService] },
@@ -32,6 +33,8 @@ const appRoutes: Routes = [
   { path: 'add-user', component: AddUserComponent, canActivate: [AuthGuardService] },
   { path: 'kursevi', component: KurseviComponent, canActivate: [AuthGuardService] },
   { path: 'dashboard-ssluzba', component: DashboardSsluzbaComponent, canActivate: [AuthGuardService] },
+  { path: 'dashboard-prof', component: DashboardProfComponent, canActivate: [AuthGuardService] },
+  { path: 'dashboard-stud', component: DashboardStudComponent, canActivate: [AuthGuardService] },
 ];
 
 @NgModule({
@@ -46,7 +49,8 @@ const appRoutes: Routes = [
     AddUserComponent,
     KurseviComponent,
     DashboardSsluzbaComponent,
-    DashboardProfComponent
+    DashboardProfComponent,
+    DashboardStudComponent
   ],
   imports: [
     BrowserModule,

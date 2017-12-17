@@ -10,9 +10,9 @@ module.exports = {
     handler: (req, res) => {
       let con = mysql.createConnection(connection);
 
-      let sql1ciklus = 'SELECT COUNT(*) as broj, godinaStudija, ciklus FROM STUDENT WHERE ciklus = 0 GROUP BY godinaStudija';
-      let sql2ciklus = 'SELECT COUNT(*) as broj, godinaStudija, ciklus FROM STUDENT WHERE ciklus = 0 GROUP BY godinaStudija';
-      let sql3 = 'SELECT AVG(n.ocjena) AS prosjek, n.akademskaGod, s.godinaStudija AS godina, o.name AS odsjek FROM nastava n, student s, odsjek o  WHERE s.Odsjek_id = o.id GROUP BY s.godinaStudija, s.Odsjek_id';
+      let sql1ciklus = 'SELECT COUNT(*) as broj, godinaStudija, ciklus FROM STUDENT WHERE ciklus = 1 GROUP BY godinaStudija';
+      let sql2ciklus = 'SELECT COUNT(*) as broj, godinaStudija, ciklus FROM STUDENT WHERE ciklus = 2 GROUP BY godinaStudija';
+      let sql3 = 'SELECT AVG(n.ocjena) AS prosjek, n.akademskaGod, s.godinaStudija AS godina, o.name AS odsjek FROM nastava n, student s, odsjek o  WHERE s.Odsjek_id = o.id AND n.Student_id = s.id GROUP BY s.godinaStudija, s.Odsjek_id';
 
       let query1 = con.query(sql1ciklus, [], function(err1, result1){
         if (!err1){

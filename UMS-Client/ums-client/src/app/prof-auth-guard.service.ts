@@ -9,11 +9,15 @@ export class ProfAuthGuardService implements CanActivate  {
 
   canActivate(): boolean {
     if (this.auth.isAuthenticated() && this.auth.getRole() === "profesor"){
-      this.router.navigate(['prof']);
+      this.router.navigate(['dashboard-prof']);
       return false;
     }
     if (this.auth.isAuthenticated() && this.auth.getRole() === "studentska"){
-      this.router.navigate(['predmeti']);
+      this.router.navigate(['dashboard-ssluzba']);
+      return false;
+    }
+    if (this.auth.isAuthenticated() && this.auth.getRole() === "student"){
+      this.router.navigate(['dashboard-stud']);
       return false;
     }
 

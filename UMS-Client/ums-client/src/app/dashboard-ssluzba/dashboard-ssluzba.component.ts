@@ -48,7 +48,7 @@ export class DashboardSsluzbaComponent implements OnInit {
 
       // The data for our dataset
       data: {
-          labels: this.statistika.prviciklus.map(x => x.godinaStudija + ". godina"),
+          labels: this.statistika.drugiciklus.map(x => x.godinaStudija + ". godina"),
           datasets: [{
               label: "Broj studenata po godinama",
               data: this.statistika.drugiciklus.map(x => x.broj),
@@ -75,13 +75,13 @@ export class DashboardSsluzbaComponent implements OnInit {
             label: "Automatika i elektronika",
             //backgroundColor: "rgb(99, 132, 255)",
             borderColor: "rgb(99, 132, 255)",
-            data: this.statistika.prosjeci.filter(x => x.odsjek == "Automatika i elektronika").map(x => x.prosjek + 1)
+            data: this.statistika.prosjeci.filter(x => x.odsjek == "Automatika i elektronika").map(x => x.prosjek)
           },
           {
             label: "Računarstvo i informatika",
             //backgroundColor: "rgb(255, 99, 132)",
             borderColor: "rgb(255, 99, 132)",
-            data: this.statistika.prosjeci.filter(x => x.odsjek == "Računarstvo i informatika").map(x => x.prosjek + 2)
+            data: this.statistika.prosjeci.filter(x => x.odsjek == "Računarstvo i informatika").map(x => x.prosjek)
           },
         ]
       },
@@ -93,9 +93,7 @@ export class DashboardSsluzbaComponent implements OnInit {
           yAxes: [{
               display: true,
               ticks: {
-                  suggestedMin: 0,    // minimum will be 0, unless there is a lower value.
-                  // OR //
-                  beginAtZero: true   // minimum value will be 0.
+                  suggestedMin: 6,    // minimum will be 0, unless there is a lower value.
               }
           }]
         }
