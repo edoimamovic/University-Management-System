@@ -20,7 +20,6 @@
 </nav>
 <div class="col-sm-3 col-md-2 sidebar" *ngIf ="auth.isAuthenticated()">
   <ul class="nav nav-sidebar" *ngIf ="auth.getRole() == 'profesor'">
-    <li class="active"><a routerLink="/dashboard-prof">Početna</a></li>
     <li><a routerLink="/dashboard-prof">Početna</a></li>
   </ul>
   <ul class="nav nav-sidebar" *ngIf ="auth.getRole() == 'profesor'">
