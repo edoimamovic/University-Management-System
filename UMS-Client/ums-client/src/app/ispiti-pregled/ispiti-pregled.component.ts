@@ -14,21 +14,23 @@ export class IspitiPregledComponent implements OnInit {
 
   kursevi = [];
   studenti = [];
+  ispiti = [];
+  filtriraniIspiti = [];
   kurs = null;
 
-  public selectCourse(index : number) : void {
-    var that = this;
-    this.kurs = this.kursevi[index];
-    this.http.get('http://localhost:3000/api/courses/students?course=' + this.kurs.id)
-    .subscribe((res : any) => {that.studenti = res},
-              (err : any) => {});
+  selectCourse(id){
+    this.filtriraniIspiti = this.ispiti.filter(x => x.id == id);
   }
-
+  
   ngOnInit() {
     var that = this;
     let username = localStorage.getItem('user');
     this.http.get('http://localhost:3000/api/courses?username=' + username)
       .subscribe((res : any) => {that.kursevi = res},
                 (err : any) => {});
+
+    this.http.get('http://localhost:3000/api/ispiti?username=' + username)
+    .subscribe((res : any) => {that.ispiti = res},
+              (err : any) => {});
   }
 }

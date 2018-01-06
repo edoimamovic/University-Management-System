@@ -1,13 +1,40 @@
-<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main container" style="padding-left:30px;">
   <h1 class="page-header" style="margin-top: 100px">Opći pregled</h1>
-  <div style="width: 200px; margin-left: 50px; margin-top:10px; display: inline-block;">
+  <div class="row">
+  <div class="col-sm-6">
+    <h3>Broj studenata</h3>
+    <div class="form-group">
+      <label class="radio-inline"><input (change)="drawStudentiPoGodinama()" type="radio" name="chart1Tip" [(ngModel)]="chart1Tip" value="bar">Bar</label>
+      <label class="radio-inline"><input (change)="drawStudentiPoGodinama()" type="radio" name="chart1Tip" [(ngModel)]="chart1Tip" value="horizontalBar">Horizontal Bar</label>
+      <label class="radio-inline"><input (change)="drawStudentiPoGodinama()" type="radio" name="chart1Tip" [(ngModel)]="chart1Tip" value="line">Line</label>
+      <label class="radio-inline"><input (change)="drawStudentiPoGodinama()" type="radio" name="chart1Tip" [(ngModel)]="chart1Tip" value="polarArea">Polar</label>
+      <label class="radio-inline"><input (change)="drawStudentiPoGodinama()" type="radio" name="chart1Tip" [(ngModel)]="chart1Tip" value="pie">Pie</label>
+      <label class="radio-inline"><input (change)="drawStudentiPoGodinama()" type="radio" name="chart1Tip" [(ngModel)]="chart1Tip" value="doughnut">Doughnut</label>
+    </div>
+      
     <canvas id="godine-pc" width="400" height="300"></canvas>
   </div>
-  <div style="width: 200px; margin-left: 250px; margin-top:10px; display: inline-block;">
+
+  <div class="col-sm-6">
+    <h3>Prosječne ocjene</h3>
+    <div class="form-group">
+      <label class="radio-inline"><input (change)="drawProsjeciPoGodinama()" type="radio" name="chart2Tip" [(ngModel)]="chart2Tip" value="bar">Bar</label>
+      <label class="radio-inline"><input (change)="drawProsjeciPoGodinama()" type="radio" name="chart2Tip" [(ngModel)]="chart2Tip" value="horizontalBar">Horizontal Bar</label>
+      <label class="radio-inline"><input (change)="drawProsjeciPoGodinama()" type="radio" name="chart2Tip" [(ngModel)]="chart2Tip" value="line">Line</label>
+      <label class="radio-inline"><input (change)="drawProsjeciPoGodinama()" type="radio" name="chart2Tip" [(ngModel)]="chart2Tip" value="polarArea">Polar</label>
+      <label class="radio-inline"><input (change)="drawProsjeciPoGodinama()" type="radio" name="chart2Tip" [(ngModel)]="chart2Tip" value="pie">Pie</label>
+      <label class="radio-inline"><input (change)="drawProsjeciPoGodinama()" type="radio" name="chart2Tip" [(ngModel)]="chart2Tip" value="doughnut">Doughnut</label>
+    </div>
+
     <canvas id="godine-lc" width="400" height="300"></canvas>
   </div>
-  <div style="width: 400px; margin-left: 250px; margin-top:10px;">
-    <canvas id="godine-rad" width="400" height="300"></canvas>
-  </div>
-
+</div>
+<div class="row">
+  <h3>
+    Prosječni bodovi po ispitima
+  </h3>
+    <div class="col-sm-12">
+      <canvas id="godine-rad" width="400" height="300"></canvas>
+    </div>   
+</div>
 </div>
