@@ -1,0 +1,57 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+	<div style="margin-left: 50px; margin-top:100px;">
+		Prijavljeni ispiti:
+		<table>
+			<thead>
+				<tr>
+					<th>Naziv predmeta</th>
+					<th>Vrijeme održavanja</th>
+					<th>Sala</th>
+					<th>Tip ispita</th>
+					<th>Prijava</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor='let prijava of prijave'>
+					<td>{{ prijava.nazivPredmeta }}</td>
+					<td>{{ prijava.vrijemeOdrzavanja | date:'dd-MMM-yyyy'}}</td>
+					<td>{{ prijava.sala }}</td>
+					<td>{{ prijava.opisIspita }} - {{ prijava.tipIspita }}</td>
+					<td *ngIf='prijava.aktuelnost==1'>
+						<input type="button" (click)='otkaziPrijavu(prijava.prijavaId)' class="btn btn-default" value="Otkazi">
+					</td>
+					<td *ngIf='prijava.aktuelnost==0'>Rok za prijavu je prosao</td>
+				</tr>
+			</tbody>
+		</table>
+		<br><br>
+		Ispitni rokovi:
+		<table>
+			<thead>
+				<tr>
+					<th>Naziv predmeta</th>
+					<th>Vrijeme održavanja</th>
+					<th>Sala</th>
+					<th>Tip ispita</th>
+					<th>Rok za prijave</th>
+					<th>Prijava</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor='let rok of rokovi'>
+					<td>{{ rok.nazivPredmeta }}</td>
+					<td>{{ rok.vrijemeOdrzavanja  | date:'dd-MMM-yyyy'}}</td>
+					<td>{{ rok.sala }}</td>
+					<td>{{ rok.opisIspita }} - {{ rok.tipIspita }}</td>
+					<td>{{ rok.rokZaPrijave  | date:'dd-MMM-yyyy'}}</td>
+					<td *ngIf='rok.aktuelnost==1 && rok.prijavljen==0'>
+						<input  type="button" (click)='podnesiPrijavu(rok.kursId, rok.ispitniRokId)' class="btn btn-default" 
+						value="Prijavi se">						
+					</td>
+					<td *ngIf='rok.aktuelnost==1 && rok.prijavljen==1'>Prijavljeni ste na ovaj termin</td>
+					<td *ngIf='rok.aktuelnost==0'>Rok za prijavu je prosao</td>
+				</tr>
+			</tbody>
+		</table>
+    </div>
+</div>

@@ -2,9 +2,9 @@ const mysql = require('mysql');
 
 const key = 'tajnikljuc';
 const mysqlConnection = {
-    host     : '127.0.0.1',
-    user     : 'root',
-    password : '',
+    host     : 'localhost',
+    user     : 'etf_user',
+    password : 'etf',
     database : 'mydb'
 };
 

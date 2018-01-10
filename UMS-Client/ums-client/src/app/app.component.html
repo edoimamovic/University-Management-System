@@ -46,6 +46,21 @@
   <ul class="nav nav-sidebar" *ngIf="auth.getRole() == 'student'">
     <li [routerLinkActive]="['active']"><a routerLink="/dashboard-stud">Početna</a></li>
   </ul>
+  <ul class="nav nav-sidebar" *ngIf="auth.getRole() == 'student'">
+    <li [routerLinkActive]="['active']"><a routerLink="/stud-predmeti">Predmeti</a></li>
+  </ul>
+    <ul class="nav nav-sidebar" *ngIf="auth.getRole() == 'student'">
+    <li [routerLinkActive]="['active']"><a routerLink="/stud-prijave">Prijava ispita</a></li>
+  </ul>
+  <ul class="nav nav-sidebar" *ngIf="auth.getRole() == 'student'">
+    <li [routerLinkActive]="['active']"><a routerLink="/stud-potvrde">Uvjerenja</a></li>
+  </ul>
+  <ul class="nav nav-sidebar" *ngIf="auth.getRole() == 'student'">
+    <li [routerLinkActive]="['active']"><a routerLink="/stud-ocjene">Polozeni predmeti</a></li>
+  </ul>
+    <ul class="nav nav-sidebar" *ngIf="auth.getRole() == 'student'">
+    <li [routerLinkActive]="['active']"><a routerLink="/stud-ispiti">Rezultati ispita</a></li>
+  </ul>
 </div>
 
 <router-outlet></router-outlet>

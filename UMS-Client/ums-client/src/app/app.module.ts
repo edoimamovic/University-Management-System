@@ -22,6 +22,11 @@ import { KurseviComponent } from './kursevi/kursevi.component';
 import { DashboardSsluzbaComponent } from './dashboard-ssluzba/dashboard-ssluzba.component';
 import { DashboardProfComponent } from './dashboard-prof/dashboard-prof.component';
 import { DashboardStudComponent } from './dashboard-stud/dashboard-stud.component';
+import { StudPredmetiComponent } from './stud-predmeti/stud-predmeti.component';
+import { StudPrijaveComponent } from './stud-prijave/stud-prijave.component';
+import { StudPotvrdeComponent } from './stud-potvrde/stud-potvrde.component';
+import { StudOcjeneComponent } from './stud-ocjene/stud-ocjene.component';
+import { StudIspitiComponent } from './stud-ispiti/stud-ispiti.component';
 
 const appRoutes: Routes = [
   { path: '', component: SigninComponent, canActivate: [ProfAuthGuardService] },
@@ -35,6 +40,11 @@ const appRoutes: Routes = [
   { path: 'dashboard-ssluzba', component: DashboardSsluzbaComponent, canActivate: [AuthGuardService] },
   { path: 'dashboard-prof', component: DashboardProfComponent, canActivate: [AuthGuardService] },
   { path: 'dashboard-stud', component: DashboardStudComponent, canActivate: [AuthGuardService] },
+  { path: 'stud-predmeti', component: StudPredmetiComponent, canActivate: [AuthGuardService] },
+  { path: 'stud-prijave', component: StudPrijaveComponent, canActivate: [AuthGuardService] },
+  { path: 'stud-potvrde', component: StudPotvrdeComponent, canActivate: [AuthGuardService] },
+  { path: 'stud-ocjene', component: StudOcjeneComponent, canActivate: [AuthGuardService] },
+  { path: 'stud-ispiti', component: StudIspitiComponent, canActivate: [AuthGuardService] },
 ];
 
 @NgModule({
@@ -50,7 +60,12 @@ const appRoutes: Routes = [
     KurseviComponent,
     DashboardSsluzbaComponent,
     DashboardProfComponent,
-    DashboardStudComponent
+    DashboardStudComponent,
+	StudPredmetiComponent,
+	StudPrijaveComponent,
+	StudPotvrdeComponent,
+	StudOcjeneComponent,
+	StudIspitiComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,18 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+	<div style="margin-left: 50px; margin-top:100px;">
+		<table>
+		<thead>
+			<tr>
+				<th>Naziv predmeta</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor='let kurs of kursevi'>
+				<td>
+					{{ kurs.nazivPredmeta }} <input type="button" class="btn btn-default" value="Otvori"/>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+    </div>
+</div>

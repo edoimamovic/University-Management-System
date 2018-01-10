@@ -1,0 +1,29 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+	<div style="margin-left: 50px; margin-top:100px;">
+		<select id="tipoviPotvrda">
+			<option *ngFor='let tp of tipoviPotvrda' value="{{ tp.id }}">{{ tp.naziv }}</option>
+		</select>
+		<input type="button" (click)='podnesiZahtjev()' class="btn btn-default" value="Podnesi zahtjev">
+		<br><br>
+		Poslani zahtjevi za uvjerenje:
+		<table>
+			<thead>
+				<tr>
+					<th>Tip potvrde</th>
+					<th>Datum zahtjeva</th>
+					<th>Status potvrde</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor='let potvrda of potvrde'>
+					<td>{{ potvrda.tipPotvrde }}</td>
+					<td>{{ potvrda.datumZahtjeva  | date:'dd-MMM-yyyy'}}</td>
+					<td>
+						{{ potvrda.statusPotvrde }} 
+						<input *ngIf='potvrda.statusPotvrdeId==0' type="button" (click)='otkaziZahtjev(potvrda.zahtjevId)' class="btn btn-default" value="Otkazi">
+					</td>
+				</tr>
+			</tbody>
+		</table>
+    </div>
+</div>

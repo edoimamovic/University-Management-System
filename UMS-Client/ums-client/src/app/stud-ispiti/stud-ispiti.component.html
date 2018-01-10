@@ -1,0 +1,26 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+	<div style="margin-left: 50px; margin-top:100px;">
+		<table>
+			<thead>
+				<tr>
+					<th>Naziv predmeta</th>
+					<th>Vrijeme održavanja</th>
+					<th>Tip ispita</th>
+					<th>Ukupni bodovi</th>
+					<th>Ostvareni bodovi</th>
+					<th>Polozeno</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor='let ispit of ispiti'>
+					<td>{{ ispit.nazivPredmeta }}</td>
+					<td>{{ ispit.vrijemeOdrzavanja | date:'dd-MMM-yyyy'}}</td>
+					<td>{{ ispit.opisIspita }} - {{ ispit.tipIspita }}</td>
+					<td>{{ ispit.bodovi }}</td>
+					<td>{{ ispit.rezultat }}</td>
+					<td>{{ ispit.polozen }}</td>
+				</tr>
+			</tbody>
+	</table>
+    </div>
+</div>
