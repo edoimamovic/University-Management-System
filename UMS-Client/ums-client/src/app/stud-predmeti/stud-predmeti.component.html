@@ -9,7 +9,8 @@
 		<tbody>
 			<tr *ngFor='let kurs of kursevi'>
 				<td>
-					{{ kurs.nazivPredmeta }} <input type="button" class="btn btn-default" value="Otvori"/>
+					{{ kurs.nazivPredmeta }} <input type="button" (click)='otvoriPredmet(kurs.kursId, kurs.nazivPredmeta)' 
+													class="btn btn-default" value="Otvori"/>
 				</td>
 			</tr>
 		</tbody>

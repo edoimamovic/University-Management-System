@@ -45,7 +45,6 @@ constructor( public router : Router, public auth: AuthService, public http: Http
 		}, 
 				   (err : any) => {});
 	  
-	  this.router.navigate(['./stud-prijave']);
   }
   
 }

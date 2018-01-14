@@ -23,5 +23,12 @@ constructor( public router : Router, public auth: AuthService, public http: Http
 		.subscribe((res : any) => {this.kursevi=res;}, 
 				   (err : any) => {});
   }
+  
+  public otvoriPredmet(kursId, predmet){
+	localStorage.setItem('kursId', kursId);
+	localStorage.setItem('predmet', predmet);
+	
+	this.router.navigate(['./stud-predmet']);
+  }
 
 }
