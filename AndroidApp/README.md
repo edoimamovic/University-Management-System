@@ -2,8 +2,11 @@
 
 login:
 
-username	password	uloga
+username	  password	  uloga
+
 studentska	test		studentska sluzba
-mmujic		test		profesor
-mmujic1		test		student
+
+mmujic		  test		profesor
+
+mmujic1		  test		student
 
