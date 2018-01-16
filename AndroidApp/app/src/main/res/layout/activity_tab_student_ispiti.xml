@@ -1,0 +1,143 @@
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:scrollbars="none"
+    android:layout_weight="1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="Prijavljeni ispiti:"
+            android:textSize="18sp" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/displayLinear1"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
+
+
+            <TableRow
+                android:id="@+id/display_row"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:layout_width="115dp"
+                    android:layout_height="50dp"
+                    android:text="Naziv predmeta"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:layout_width="95dp"
+                    android:layout_height="50dp"
+                    android:text="Rok za prijave"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:layout_width="95dp"
+                    android:layout_height="50dp"
+                    android:text="Vrijeme odrzavanja"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:layout_width="35dp"
+                    android:layout_height="50dp"
+                    android:text="Sala"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:text="Tip ispita"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:textStyle="bold|italic" />
+            </TableRow>
+
+        </TableLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="Ispiti otvoreni za prijavu:"
+            android:textSize="18sp" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/displayLinear2"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp" >
+
+
+            <TableRow
+                android:id="@+id/display_row2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:layout_width="85dp"
+                    android:layout_height="50dp"
+                    android:text="Naziv predmeta"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:layout_width="75dp"
+                    android:layout_height="50dp"
+                    android:text="Rok za prijave"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:layout_width="75dp"
+                    android:layout_height="50dp"
+                    android:text="Vrijeme odrzavanja"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:layout_width="35dp"
+                    android:layout_height="50dp"
+                    android:text="Sala"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    android:text="Tip ispita"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:textStyle="bold|italic" />
+            </TableRow>
+
+        </TableLayout>
+    </LinearLayout>
+</ScrollView>

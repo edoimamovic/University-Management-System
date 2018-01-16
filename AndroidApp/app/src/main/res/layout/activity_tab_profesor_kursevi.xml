@@ -1,0 +1,77 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/displayLinear"
+    android:orientation="vertical"
+    android:layout_marginTop="75dp" >
+
+    <TableRow
+        android:id="@+id/display_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:text="Naziv predmeta"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:layout_width="45dp"
+            android:layout_height="50dp"
+            android:text="Odsjek"
+            android:textSize="14sp"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:text="IZB."
+            android:textAlignment="center"
+            android:textSize="14sp"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:text="BR. PR."
+            android:textAlignment="center"
+            android:textSize="14sp"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:text="BR. TUT."
+            android:textSize="14sp"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:text="BR. LAB."
+            android:textAlignment="center"
+            android:textSize="14sp"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:layout_width="35dp"
+            android:layout_height="50dp"
+            android:text="ECTS bod"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:layout_width="65dp"
+            android:layout_height="50dp"
+            android:text="Br. studenata"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            android:textStyle="bold|italic" />
+    </TableRow>
+
+</TableLayout>

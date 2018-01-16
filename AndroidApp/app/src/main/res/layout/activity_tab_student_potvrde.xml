@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="5dp"
+    android:orientation="vertical"
+    tools:context="com.example.hmusovic.baze.TabStudentPotvrde">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Podnesi zahtjev za potvrdu: "
+        android:textSize="16sp" />
+
+
+    <Spinner
+        android:id="@+id/planets_spinner_tipPotvrde"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="10dp"
+        android:alpha="1"
+        android:ems="10"
+        android:fontFamily="sans-serif-condensed"
+        android:inputType="textPersonName"
+        android:textColor="#fff"
+        android:textColorHighlight="#fff"
+        android:textColorHint="#fff"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/buttonPodnesiZahtjev"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:layout_gravity="right"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="10dp"
+        android:text="Podnesi" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Vasi trenutni zahtjevi za potvrdu: "
+        android:textSize="16sp"/>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="none"
+        android:layout_weight="1">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/displayLinear3"
+            android:orientation="vertical"
+            android:layout_marginTop="15dp" >
+
+            <TableRow
+                android:id="@+id/display_row"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:layout_width="165dp"
+                    android:layout_height="50dp"
+                    android:text="Tip potvrde"
+                    android:textAlignment="center"
+                    android:textSize="14sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:text="Datum prijave"
+                    android:textAlignment="center"
+                    android:textSize="14sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="50dp"
+                    android:text="Status"
+                    android:textAlignment="center"
+                    android:textSize="14sp"
+                    android:textStyle="bold|italic" />
+
+            </TableRow>
+
+        </TableLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

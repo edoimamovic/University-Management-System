@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.hmusovic.baze">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="UniversityMS"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivitySluzba" />
+        <activity android:name=".MainActivityProfesor" />
+        <activity android:name=".MainActivityStudent" />
+        <activity
+            android:name=".KursAzuriranjeActivity"
+            android:parentActivityName=".MainActivitySluzba" />
+        <activity
+            android:name=".IspitAzuriranjeActivity"
+            android:parentActivityName=".MainActivityProfesor" />
+    </application>
+
+</manifest>
